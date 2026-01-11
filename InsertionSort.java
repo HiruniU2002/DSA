@@ -1,0 +1,47 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package InsertionSort;
+
+/**
+ *
+ * @author User
+ */
+public class InsertionSort {
+
+
+    public static void insertionSort(int[] arr) {
+
+        int n = arr.length;
+
+        for (int i = 1; i < n; i++) {
+
+            int key = arr[i];
+            int j = i - 1;
+
+            // Move elements greater than key
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+
+            arr[j + 1] = key;
+        }
+    }
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        int[] arr = {9, 5, 1, 4, 3};
+
+        System.out.println("Insertion Sort\n");
+
+        insertionSort(arr);
+
+        for (int x : arr) {
+            System.out.print(x + " ");
+        }
+    }
+    
+}
